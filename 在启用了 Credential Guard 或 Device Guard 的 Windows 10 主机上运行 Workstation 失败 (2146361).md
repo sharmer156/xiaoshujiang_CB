@@ -50,14 +50,14 @@ author: 飘的沙鸥
 3.  选择**不重新启动**。
 4.  通过使用管理员帐户在主机上启动命令提示符来删除相关的 EFI 变量并运行以下命令：
 
-    mountvol X: /s
-    copy %WINDIR%\System32\SecConfig.efi X:\EFI\Microsoft\Boot\SecConfig.efi /Y
-    bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
-    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
-    bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
-    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
-    bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=X:
-    mountvol X: /d
+>     mountvol X: /s
+>     copy %WINDIR%\System32\SecConfig.efi X:\EFI\Microsoft\Boot\SecConfig.efi /Y
+>     bcdedit /create {0cb3b571-2f2e-4343-a879-d86a476d7215} /d "DebugTool" /application osloader
+>     bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} path "\EFI\Microsoft\Boot\SecConfig.efi"
+>     bcdedit /set {bootmgr} bootsequence {0cb3b571-2f2e-4343-a879-d86a476d7215}
+>     bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} loadoptions DISABLE-LSA-ISO,DISABLE-VBS
+>     bcdedit /set {0cb3b571-2f2e-4343-a879-d86a476d7215} device partition=X:
+>     mountvol X: /d
 
     **注意**：确保X为未使用的驱动器，否则更改为其他驱动器。
 
