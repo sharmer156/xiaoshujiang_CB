@@ -1,0 +1,22 @@
+---
+title: 2018-9-25dwm.exe dwmcore.dll错误
+tags: windows突然死机,dll错误,系统问题
+grammar_cjkRuby: true
+---
+
+
+错误应用程序名称: dwm.exe，版本: 10.0.17134.1，时间戳: 0xf5178e97
+错误模块名称: dwmcore.dll，版本: 10.0.17134.254，时间戳: 0x5641a0c9
+异常代码: 0xc00001ad
+错误偏移量: 0x00000000001ce092
+错误进程 ID: 0x60c
+错误应用程序启动时间: 0x01d4548152d4aefe
+错误应用程序路径: C:\WINDOWS\system32\dwm.exe
+错误模块路径: C:\WINDOWS\system32\dwmcore.dll
+报告 ID: bb8c420c-502c-4d07-8ab3-a4c501371ad1
+错误程序包全名: 
+错误程序包相对应用程序 ID: 
+
+![enter description here](https://www.github.com/sharmer156/xiaoshujiangimg/raw/master/小书匠/2018-09-25_164913.jpg "2018-09-25_164913")
+![enter description here](https://markdown.xiaoshujiang.com/img/spinner.gif "[[[1537865433638]]]" )
+
