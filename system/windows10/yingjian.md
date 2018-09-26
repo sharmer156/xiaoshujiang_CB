@@ -1,6 +1,6 @@
 
 ---
-title: 2018-9-25dwm.exe dwmcore.dll错误
+title: 2018-9-26硬件
 tags: windows突然死机,dll错误,系统问题
 grammar_cjkRuby: true
 ---
@@ -19,3 +19,5 @@ https://item.jd.com/4705153.html?dist=jd
 ![enter description here](https://www.github.com/sharmer156/xiaoshujiangimg/raw/master/小书匠/1537974892953.png)
 ![enter description here](https://www.github.com/sharmer156/xiaoshujiangimg/raw/master/小书匠/1537974902634.png)
 https://cn.msi.com/Motherboard/support/X370-GAMING-PLUS#down-bios
+
+![enter description here](https://www.github.com/sharmer156/xiaoshujiangimg/raw/master/小书匠/1537995806537.png)
