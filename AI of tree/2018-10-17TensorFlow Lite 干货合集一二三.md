@@ -3,6 +3,12 @@ title: 2018-10-17TensorFlow Lite 干货合集一二三
 tags: 
 grammar_cjkRuby: true
 ---
+
+
+[toc!]
+
+-------
+
 一
 https://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484899&idx=1&sn=c197f6bf81151a0aace7817ac8b48680&chksm=fc184eabcb6fc7bd9fc74133fbfa498d45effcc1f3c7d088dcced8bad68d0f84650cf470e9b2&scene=21#wechat_redirect
 
@@ -12,8 +18,7 @@ https://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484926&idx=1&sn=65ba3f
 三
 https://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484945&idx=1&sn=cf2d4508fada239ade8e4f5c5d347bc9&chksm=fc184d59cb6fc44f75138bd0f369a1acafea7aa268d384f36219e36a330d3adc9441c213edd5&scene=0#rd
 
-[toc!]
-## Google AI 系列教程合集一
+## Google AI 系列教程合集 一
 
 原创： Google [TensorFlow](javascript:void(0);) _6天前_
 
@@ -54,7 +59,7 @@ https://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484945&idx=1&sn=cf2d45
 本文要介绍的就是数据处理中最强有力也最流行的工具之一：Pandas！
 
 ----
-## TensorFlow Lite ，干货合集系列文章第二弹！
+## TensorFlow Lite ，干货合集系列文章 二
 
 原创： Google [TensorFlow](javascript:void(0);) _2 days ago_
 
@@ -100,7 +105,7 @@ Kika keyboard 与 TensorFlow Lite
 
 ------
 
-## TensorFlow.js，干货合集系列第三弹！
+## TensorFlow.js，干货合集系列 三 
 
 
 本文是学习 TensorFlow 的干货文章合集第三篇。在开始介绍今天合集内容之前，我们先来一起回顾一下前两篇合集：[Google AI 系列教程合集！值得收藏](http://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484899&idx=1&sn=c197f6bf81151a0aace7817ac8b48680&chksm=fc184eabcb6fc7bd9fc74133fbfa498d45effcc1f3c7d088dcced8bad68d0f84650cf470e9b2&scene=21#wechat_redirect) 和 T[ensorFlow Lite ，干货合集系列文章第二弹！](http://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484926&idx=1&sn=65ba3f3b20d75b7546579c58accec91a&chksm=fc184eb6cb6fc7a0e3680e104e43392c39b639bd7056a62d251d4c23c7f01775cab92c504e08&scene=21#wechat_redirect) 还没看过的朋友们，可以直接点击链接查看详情。
@@ -123,7 +128,7 @@ Kika keyboard 与 TensorFlow Lite
 
 在这篇文章中，我们将利用 TensorFlow.js，D3.js 和 Web 的力量使训练模型的过程可视化，以预测棒球数据中的坏球（蓝色区域）和好球（橙色区域）。
 
-## ▷ [使用 Colab 在 tf.keras 中训练模型，并使用 TensorFlow.js 在浏览器中运行](http://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484573&idx=1&sn=30d0f9e0461827c43818c760989227fc&chksm=fc184fd5cb6fc6c37d374d30f45f4e5298d2d5f52db16b167350aff2929d95c9cc21321ec4da&scene=21#wechat_redirect)
+### ▷ [使用 Colab 在 tf.keras 中训练模型，并使用 TensorFlow.js 在浏览器中运行](http://mp.weixin.qq.com/s?__biz=MzU1OTMyNDcxMQ==&mid=2247484573&idx=1&sn=30d0f9e0461827c43818c760989227fc&chksm=fc184fd5cb6fc6c37d374d30f45f4e5298d2d5f52db16b167350aff2929d95c9cc21321ec4da&scene=21#wechat_redirect)
 
 我们将创建一个简单的工具来识别图纸并输出当前图纸的名称。 此应用程序将直接在浏览器上运行，无需任何安装。我们会使用 Google Colab 来训练模型，并使用 TensorFlow.js 在浏览器上部署它。
 
