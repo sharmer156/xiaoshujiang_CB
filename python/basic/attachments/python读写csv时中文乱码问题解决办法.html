@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<h1><a id="cb_post_title_url" href="https://www.cnblogs.com/shengulong/p/7097869.html">python读写csv时中文乱码问题解决办法</a></h1>
+<div></div>
+<div>
+  <div id="cnblogs_post_body">
+    <p><a href="http://www.cnblogs.com/jxzheng/p/5186490.html" target="_blank">参考1</a></p>
+    <p><a href="http://blog.csdn.net/u011089523/article/details/52859371" target="_blank">参考2</a></p>
+    <p><a href="http://www.cnblogs.com/dkblog/archive/2011/03/02/1980644.html" target="_blank">参考3</a></p>
+    <p>CSV是英文Comma Separate Values（逗号分隔值）的缩写，顾名思义，文档的内容是由 &ldquo;,&rdquo; 分隔的一列列的数据构成的，可以使用excel和文本编辑器等打开。CSV文档是一种编辑方便，可视化效果极佳的数据存储方式</p>
+    <p>1、python读写、追加csv方法：</p>
+    <p>&lsquo;r&rsquo;：只读（缺省。如果文件不存在，则抛出错误）<br>
+      &lsquo;w&rsquo;：只写（如果文件不存在，则自动创建文件）<br>
+      &lsquo;a&rsquo;：附加到文件末尾（如果文件不存在，则自动创建文件）<br>
+      &lsquo;r+&rsquo;：读写（如果文件不存在，则抛出错误）</p>
+    <div>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+      <pre>1 import csv,os  2 if os.path.isfile('test.csv'):  3     with open("test.csv","r") as csvfile:  4         reader = csv.reader(csvfile)  5         #这里不需要readlines  6         for line in reader:  7             print line</pre>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+    </div>
+    <div>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+      <pre>import csv    #python2可以用file替代open  #不存在则会创建文件  with open("test.csv","w") as csvfile:       writer = csv.writer(csvfile)        #先写入columns_name      writer.writerow(["index","a_name","b_name"])      #写入多行用writerows      writer.writerows([[0,1,3],[1,2,3],[2,3,4]])</pre>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+    </div>
+    <div>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+      <pre>import csv    #python2可以用file替代open  #不存在则会创建文件  with open("test.csv","a") as csvfile:       writer = csv.writer(csvfile)        #先写入columns_name      writer.writerow(["index","a_name","b_name"])      #写入多行用writerows      writer.writerows([[0,1,3],[1,2,3],[2,3,4]])</pre>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+    </div>
+    <p>2、excel打开csv文件，可以识别编码&ldquo;GB2312&rdquo;，但是不能识别&ldquo;utf-8&rdquo;,数据库里的字符串编码是utf-8.因此：</p>
+    <p>当从csv读取数据（data）到数据库的时候，需要先把GB2312转换为unicode编码，然后再把unicode编码转换为utf-8编码：data.decode('GB2312').encode('utf-8')</p>
+    <p>当从数据库读取数据（data）存到csv文件的时候，需要先把utf-8编码转换为unicode编码，然后再把unicode编码转换为GB2312编码：data.decode('utf-8').encode('GB2312')</p>
+    <p>3、decode('utf-8')表示把utf-8编码转换为unicode编码；encode('utf-8')表示把unicode编码转换为utf-8编码</p>
+    <p>4、Unicode只是一个符号集，它规定了符号的二进制代码，却没有规定二进制代码如何存储</p>
+    <p>5、可以使用python的编码转换模块：codecs</p>
+    <p> </p>
+    <div>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+      <pre> 1 python unicode文件读写：   2    3 #coding=gbk   4 import codecs   5    6 f = codecs.open('c:/intimate.txt','a','utf-8')#这里表示把intimate.txt文件从utf-8编码转换为unicode，就可以对其进行unicode读写了   7 f.write(u'中文')#直接写入unicode   8 s = '中文'   9 f.write(s.decode('gbk'))#先把gbk的s解码成unicode然后写入文件  10 f.close()  11   12 f = codecs.open('c:/intimate.txt','r','utf-8')  13 s = f.readlines()  14 f.close()  15 for line in s:  16     print line.encode('gbk')</pre>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+    </div>
+    <p> </p>
+    <p>6、<strong>python代码文件的编码</strong></p>
+    <p>py文件默认是ASCII编码，中文在显示时会做一个ASCII到系统默认编码的转换，这时就会出错：SyntaxError: Non-ASCII character。需要在代码文件的第一行或第二行添加编码指示：</p>
+    <ol>
+      <li># coding=utf-8 ##以utf-8编码储存中文字符</li>
+      <li>print &lsquo;中文&rsquo;像上面那样直接输入的字符串是按照代码文件的编码来处理的，如果用unicode编码，有以下2种方式：<br>
+        <blockquote>
+          <ol>
+            <li>s1  = u&rsquo;中文&rsquo; #u表示用unicode编码方式储存信息</li>
+            <li>s2 = unicode(&lsquo;中文&rsquo;,&rsquo;gbk&rsquo;)</li>
+          </ol>
+        </blockquote>
+      </li>
+    </ol>
+    <p>unicode是一个内置函数，第二个参数指示源字符串的编码格式。</p>
+    <p>decode是任何字符串具有的方法，将字符串转换成unicode格式，参数指示源字符串的编码格式。</p>
+    <p>encode也是任何字符串具有的方法，将字符串转换成参数指定的格式。</p>
+    <p><strong>python字符串的编码</strong></p>
+    <p>用 u&rsquo;汉字&rsquo; 构造出来的是unicode类型，不用的话构造出来是str类型</p>
+    <p>str的编码是与系统环境相关的，一般就是sys.getfilesystemencoding()得到的值</p>
+    <p>所以从unicode转str，要用encode方法</p>
+    <p>从str转unicode，所以要用decode</p>
+    <p>例如：</p>
+    <pre># coding=utf-8   #默认编码格式为utf-8    s = u'中文' #unicode编码的文字  print s.encode('utf-8')   #转换成utf-8格式输出   print s #效果与上面相同，似乎默认直接转换为指定编码</pre>
+    <p>我的总结：</p>
+    <pre>u=u'unicode编码文字'  g=u.encode('gbk') #转换为gbk格式  print g #此时为乱码，因为当前环境为utf-8,gbk编码文字为乱码  str=g.decode('gbk').encode('utf-8')   #以gbk编码格式读取g（因为他就是gbk编码的）并转换为utf-8格式输出  print str #正常显示中文</pre>
+    <p>安全的方法：</p>
+    <pre>s.decode('gbk','ignore').encode('utf-8′) #以gbk编码读取（当然是读取gbk编码格式的文字了）并忽略错误的编码，转换成utf-8编码输出</pre>
+    <p>因为decode的函数原型是decode([encoding], [errors='strict'])，可以用第二个参数控制错误处理的策略，默认的参数就是strict，代表遇到非法字符时抛出异常；</p>
+    <p>如果设置为ignore，则会忽略非法字符；<br>
+      如果设置为replace，则会用?取代非法字符；<br>
+      如果设置为xmlcharrefreplace，则使用XML的字符引用。</p>
+    <p><strong><span id="Label3">unicode(str,&lsquo;gb2312&lsquo;)与str.decode(&lsquo;gb2312&lsquo;)是一样的，都是将gb2312编码的str转为unicode编码</span></strong></p>
+    <p>7、代码文件编码：</p>
+    <p>我们在.py文件开头写的：#-*- coding:utf-8 -*- 声称了代码文件编码为utf-8，这时候，文件里面书写字符串都是utf-8编码的</p>
+    <p>8、获得系统编码：</p>
+    <div>
+      <pre>import sys  print sys.getdefaultencoding()</pre>
+    </div>
+    <p> 9、sys.setdefaultencoding('utf-8')的作用是告诉系统自动解码，也就是自动完成utf-8到unicode编码的转换</p>
+    <div>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+      <pre>#! /usr/bin/env python   # -*- coding: utf-8 -*-     import sys   reload(sys) # Python2.5 初始化后会删除 sys.setdefaultencoding 这个方法，我们需要重新载入   sys.setdefaultencoding('utf-8') <br><br>str = '中文' #这是utf-8编码的字符串<br>  str.encode('gb18030')  #转换为gb18030编码，因为已经自动解码，所以不用写成这种样式：str.decode('utf-8').encode('gb18030')</pre>
+      <div><a href="javascript:void(0);" onclick="copyCnblogsCode(this)" title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></div>
+    </div>
+    <p> 10、字符编码判断：</p>
+    <p>法一：<br>
+      isinstance(s, str) 用来判断是否为一般字符串<br>
+      isinstance(s, unicode) 用来判断是否为unicode<br>
+      或<br>
+      if type(str).__name__!="unicode":<br>
+      str=unicode(str,"utf-8")<br>
+      else:<br>
+      pass<br>
+      法二：<br>
+      Python chardet 字符编码判断<br>
+      使用 chardet 可以很方便的实现字符串/文件的编码检测。尤其是中文网页，有的页面使用GBK/GB2312，有的使用UTF8，如果你需要去爬一些页面，知道网页编码很重要的，虽然HTML页面有charset标签，但是有些时候是不对的。那么chardet就能帮我们大忙了。 <br>
+      <br>
+      chardet实例<br>
+      &gt;&gt;&gt; import urllib<br>
+      &gt;&gt;&gt; rawdata = urllib.urlopen('http://www.google.cn/').read()<br>
+      &gt;&gt;&gt; import chardet<br>
+      &gt;&gt;&gt; chardet.detect(rawdata)<br>
+      {'confidence': 0.98999999999999999, 'encoding': 'GB2312'}<br>
+      &gt;&gt;&gt;chardet可以直接用detect函数来检测所给字符的编码。函数返回值为字典，有2个元数，一个是检测的可信度，另外一个就是检测到的编码。 <br>
+      <br>
+      chardet 安装<br>
+      pip install chardet</p>
+  </div>
+</div>
+</body>
+</html>
