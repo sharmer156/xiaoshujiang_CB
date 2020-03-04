@@ -14,7 +14,7 @@ grammar_mathjax: true
 
 作者：LogM
 
-本文原载于 <https://segmentfault.com/u/logm/articles> ，不允许转载~
+本文原载于 <https://segmentfault.com/u/logm/articles> 
 
 ## 1\. 由来
 
@@ -56,10 +56,10 @@ chrome浏览器可以安装MathJax渲染插件解决，比如：
 
 这是一个行内公式：`!$P = \frac{C_a^k \cdot C_b^{n-k}}{C_{a+b}^n}$`
 ```mathjax!
-$P = \frac{C_a^k \cdot C_b^{n-k}}{C_{a+b}^n}$    
+
+$P = \frac{C_a^k \cdot C_b^{n-k}}{C_{a+b}^n}$   
 $  P = \frac{C_a^k \cdot C_b^{n-k}}{C_{a+b}^n}  
-$```
+$
 
 这是两个单行公式：
 
-阅读 789 更新于 7月9日
