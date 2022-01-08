@@ -1,0 +1,28 @@
+{
+  "dna": "6f9ea566f0e44caaaf1fb0829669e15d1b1a652c",
+  "name": "Web3_NFT#1",
+  "description": "Web3_NFT will be a part of the beginning stroy and games of Aigoworld,Let us guard the forest ",
+  "image": "https://hipstersound.com/ambience.html",
+  "edition": 1,
+  "date": 1638751933668,
+  "attributes": [
+    {
+      "trait_type": "force",
+      "value": "Horns "
+    },
+    {
+      "trait_type": "Color",
+      "value": "Mycelium"
+    },
+    {
+      "trait_type": "beat",
+      "value": "Forest "
+    },
+    {
+      "trait_type": "Noise",
+      "value": "refine "
+    }
+  ],
+  "compiler": "Aigoworld",
+  "artist": "Aigo"
+}
