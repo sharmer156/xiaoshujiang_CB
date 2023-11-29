@@ -1,5 +1,5 @@
 ---
-title: 2023-11-20 DELL3 PROMPT
+title: 2023-11-20 DELL3 PROMPT 人物
 tags: 
 grammar_cjkRuby: true
 ---
